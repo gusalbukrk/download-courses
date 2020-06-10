@@ -1,3 +1,8 @@
+### Instructions
+
+- copy the links of the courses to download to `download-<plataform-name>`
+- run the script `./<plataform-name>.sh`
+
 ### Note
 
 - the youtube-dl parameters are to make sure you don't get blocked very fast
