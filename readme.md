@@ -1,7 +1,8 @@
 ### Instructions
 
-- copy the links of the courses to download to `download-<plataform-name>`
-- run the script `./<plataform-name>.sh`
+- copy the links of the courses to download to the download file, e.g. 'pluralsight.sh'
+- make the script executable, e.g. `chmod 764 pluralsight.sh`
+- run the script, e.g. `./pluralsight.sh`
 
 ### Note
 
