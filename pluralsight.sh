@@ -4,10 +4,11 @@
 # will download the first chapter's videos
 # and then return the error
 # "No video formats found"
-# username="tomalbbr@outlook.com"
-username="benalbbr@outlook.com"
-password="ls804028"
-download_dir="/media/gusalbukrk/Files/Downloading"
+# username="dosanbr@outlook.com"
+# username="newsanbr@outlook.com"
+# username="oldsanbr@outlook.com"
+# password="myAss069"
+download_dir="/media/gusalbukrk/Files/Downloading2"
 
 if [ ! -d "${download_dir}" ]; then
   mkdir "${download_dir}"
@@ -32,7 +33,7 @@ while read url; do
   course_dir="${download_dir}/${title}/"
   mkdir "${course_dir}"
 
-  youtube-dl --verbose --username "${username}" --password "${password}" --sleep-interval 35 --max-sleep-interval 45 --limit-rate 250K --retries 10 --output "${course_dir}%(playlist_index)s - %(title)s.%(ext)s" "${url}"
+  youtube-dl --verbose --cookies "./cookies.txt" --sleep-interval 180 --max-sleep-interval 300 --limit-rate 250K --retries 5 --output "${course_dir}%(playlist_index)s - %(title)s.%(ext)s" "${url}"
 
   exit_code=$?
 
@@ -40,6 +41,7 @@ while read url; do
     sed -i "\#${url}#d" download-pluralsight
     echo "Download completed!"
     echo
+    exit 1
   else
     echo "There was an error while downloading '${title}'!"
     echo

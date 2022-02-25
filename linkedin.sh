@@ -4,8 +4,8 @@
 # will download the first chapter's videos
 # and then return the error
 # "No video formats found"
-username="lgalbuquerquebr@gmail.com"
-password="wd051017"
+username="gusalbukrk@gmail.com"
+password="@wdlD051017!"
 download_dir="/media/gusalbukrk/Files/Downloading"
 
 if [ ! -d "${download_dir}" ]; then
@@ -31,7 +31,7 @@ while read url; do
   course_dir="${download_dir}/${title}/"
   mkdir "${course_dir}"
 
-  youtube-dl --verbose --username "${username}" --password "${password}" --sleep-interval 10 --retries 3 --format "best[height=540]" --output "${course_dir}%(playlist_index)s - %(title)s.%(ext)s" "${url}"
+  youtube-dl --verbose --username "${username}" --password "${password}" --sleep-interval 30 --max-sleep-interval 60 --retries infinite --format "best[height=540]" --output "${course_dir}%(playlist_index)s - %(title)s.%(ext)s" "${url}"
 
   exit_code=$?
 
